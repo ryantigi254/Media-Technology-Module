@@ -1,0 +1,25 @@
+Colour Images
+
+63
+240
+Modifications to our structure for colour
+63
+240
+63
+240
+Now we need three 
+separate matrices, 
+one for each colour.
+Each matrix holds 
+values which represent 
+the corresponding
+ colour in the image
+Our matrix is now
+Of size
+640 x 480 x 3
+
+Tulips in RGB
+
+
+
+
