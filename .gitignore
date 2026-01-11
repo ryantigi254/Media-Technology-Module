@@ -1,0 +1,62 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.eggs/
+*.egg-info/
+*.egg
+
+# Data and Models (large files)
+data/
+models/
+outputs/
+*.pt
+*.caffemodel
+*.prototxt
+*.onnx
+*.h5
+*.pb
+
+# Evaluations (generated)
+evaluations/predictions/
+evaluations/predictions_prob/
+evaluations/predictions_prob_option_a/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Testing / Cache
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Build
+build/
+dist/
+*.so
+
+# Environment
+*.env
+.env.local
+
+# Logs
+*.log
+
+# Large zip files
+requirements-dev.zip
