@@ -1,0 +1,72 @@
+{
+  "video": "E:\\22837352\\Media-Technology-Module\\data\\video_sets\\set_4\\video4_1.avi",
+  "motion_config": {
+    "min_contour_area": 1200,
+    "blur_ksize": 5,
+    "mog2_history": 300,
+    "mog2_var_threshold": 16.0,
+    "mog2_detect_shadows": true,
+    "mog2_learning_rate": 0.005,
+    "threshold_value": 200,
+    "morph_kernel": 3,
+    "morph_close_iterations": 3,
+    "dilate_iterations": 2,
+    "merge_bbox_padding": 18,
+    "use_connected_components": false,
+    "single_box": false,
+    "motion_on_frames": 3,
+    "motion_off_frames": 6,
+    "prob_presence_draw": false,
+    "roi_rects": []
+  },
+  "env": {
+    "platform": "Windows-10-10.0.22631-SP0",
+    "python": "3.10.11",
+    "opencv": "4.13.0",
+    "cpu_count": 32,
+    "yolo_available": false
+  },
+  "results": [
+    {
+      "mode": "motion",
+      "processed_total": 600,
+      "processed_timed": 570,
+      "warmup_frames": 30,
+      "wall_time_sec": 2.6653438001521863,
+      "fps": 213.85608864697082,
+      "model_calls": 0,
+      "model_call_time_sec": 0.0,
+      "avg_model_call_ms": 0.0,
+      "model_calls_per_100_frames": 0.0
+    },
+    {
+      "mode": "hog",
+      "processed_total": 600,
+      "processed_timed": 570,
+      "warmup_frames": 30,
+      "wall_time_sec": 6.434655699944415,
+      "fps": 88.58282813871827,
+      "model_calls": 62,
+      "model_call_time_sec": 4.001876199952676,
+      "avg_model_call_ms": 64.54639032181736,
+      "model_calls_per_100_frames": 10.333333333333334
+    },
+    {
+      "mode": "dnn",
+      "processed_total": 600,
+      "processed_timed": 570,
+      "warmup_frames": 30,
+      "wall_time_sec": 2.7848925999569474,
+      "fps": 204.67575661941572,
+      "model_calls": 37,
+      "model_call_time_sec": 0.4735083999839844,
+      "avg_model_call_ms": 12.797524323891471,
+      "model_calls_per_100_frames": 6.166666666666667
+    },
+    {
+      "mode": "yolo",
+      "skipped": true,
+      "reason": "ultralytics not installed in this environment"
+    }
+  ]
+}

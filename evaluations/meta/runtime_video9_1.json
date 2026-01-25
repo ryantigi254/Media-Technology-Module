@@ -1,0 +1,72 @@
+{
+  "video": "E:\\22837352\\Media-Technology-Module\\data\\video_sets\\set_9\\video9_1.avi",
+  "motion_config": {
+    "min_contour_area": 1200,
+    "blur_ksize": 5,
+    "mog2_history": 300,
+    "mog2_var_threshold": 16.0,
+    "mog2_detect_shadows": true,
+    "mog2_learning_rate": 0.005,
+    "threshold_value": 200,
+    "morph_kernel": 3,
+    "morph_close_iterations": 3,
+    "dilate_iterations": 2,
+    "merge_bbox_padding": 18,
+    "use_connected_components": false,
+    "single_box": false,
+    "motion_on_frames": 3,
+    "motion_off_frames": 6,
+    "prob_presence_draw": false,
+    "roi_rects": []
+  },
+  "env": {
+    "platform": "Windows-10-10.0.22631-SP0",
+    "python": "3.10.11",
+    "opencv": "4.13.0",
+    "cpu_count": 32,
+    "yolo_available": false
+  },
+  "results": [
+    {
+      "mode": "motion",
+      "processed_total": 600,
+      "processed_timed": 570,
+      "warmup_frames": 30,
+      "wall_time_sec": 1.1648245999531355,
+      "fps": 489.3440609195006,
+      "model_calls": 0,
+      "model_call_time_sec": 0.0,
+      "avg_model_call_ms": 0.0,
+      "model_calls_per_100_frames": 0.0
+    },
+    {
+      "mode": "hog",
+      "processed_total": 600,
+      "processed_timed": 570,
+      "warmup_frames": 30,
+      "wall_time_sec": 0.9414615999558009,
+      "fps": 605.4415815013166,
+      "model_calls": 7,
+      "model_call_time_sec": 0.1018060999995214,
+      "avg_model_call_ms": 14.5437285713602,
+      "model_calls_per_100_frames": 1.1666666666666667
+    },
+    {
+      "mode": "dnn",
+      "processed_total": 600,
+      "processed_timed": 570,
+      "warmup_frames": 30,
+      "wall_time_sec": 0.9357932999555487,
+      "fps": 609.1088705455314,
+      "model_calls": 5,
+      "model_call_time_sec": 0.11061410000547767,
+      "avg_model_call_ms": 22.122820001095533,
+      "model_calls_per_100_frames": 0.8333333333333334
+    },
+    {
+      "mode": "yolo",
+      "skipped": true,
+      "reason": "ultralytics not installed in this environment"
+    }
+  ]
+}

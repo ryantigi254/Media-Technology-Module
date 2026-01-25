@@ -1,0 +1,66 @@
+{
+  "videos": [
+    {
+      "video": "E:\\22837352\\Media-Technology-Module\\csy3058_as2_smart_security_camera\\data\\wisenet\\video_sets\\set_4\\video4_1.avi",
+      "total_frames": 7154,
+      "positive_frames": 445,
+      "negative_frames": 6709,
+      "negative_ratio": 0.9377970366228683
+    },
+    {
+      "video": "E:\\22837352\\Media-Technology-Module\\csy3058_as2_smart_security_camera\\data\\wisenet\\video_sets\\set_4\\video4_4.avi",
+      "total_frames": 7153,
+      "positive_frames": 7153,
+      "negative_frames": 0,
+      "negative_ratio": 0.0
+    },
+    {
+      "video": "E:\\22837352\\Media-Technology-Module\\csy3058_as2_smart_security_camera\\data\\wisenet\\video_sets\\set_9\\video9_1.avi",
+      "total_frames": 750,
+      "positive_frames": 0,
+      "negative_frames": 750,
+      "negative_ratio": 1.0
+    },
+    {
+      "video": "E:\\22837352\\Media-Technology-Module\\csy3058_as2_smart_security_camera\\data\\wisenet\\video_sets\\set_9\\video9_2.avi",
+      "total_frames": 1000,
+      "positive_frames": 0,
+      "negative_frames": 1000,
+      "negative_ratio": 1.0
+    },
+    {
+      "video": "E:\\22837352\\Media-Technology-Module\\csy3058_as2_smart_security_camera\\data\\wisenet\\video_sets\\set_9\\video9_3.avi",
+      "total_frames": 1000,
+      "positive_frames": 0,
+      "negative_frames": 1000,
+      "negative_ratio": 1.0
+    },
+    {
+      "video": "E:\\22837352\\Media-Technology-Module\\csy3058_as2_smart_security_camera\\data\\wisenet\\video_sets\\set_9\\video9_4.avi",
+      "total_frames": 1000,
+      "positive_frames": 1000,
+      "negative_frames": 0,
+      "negative_ratio": 0.0
+    },
+    {
+      "video": "E:\\22837352\\Media-Technology-Module\\csy3058_as2_smart_security_camera\\data\\wisenet\\video_sets\\set_9\\video9_5.avi",
+      "total_frames": 1000,
+      "positive_frames": 1000,
+      "negative_frames": 0,
+      "negative_ratio": 0.0
+    },
+    {
+      "video": "E:\\22837352\\Media-Technology-Module\\csy3058_as2_smart_security_camera\\data\\wisenet\\video_sets\\set_9\\video9_6.avi",
+      "total_frames": 1000,
+      "positive_frames": 0,
+      "negative_frames": 1000,
+      "negative_ratio": 1.0
+    }
+  ],
+  "aggregate": {
+    "total_frames": 20057,
+    "positive_frames": 9598,
+    "negative_frames": 10459,
+    "negative_ratio": 0.5214638280899436
+  }
+}
