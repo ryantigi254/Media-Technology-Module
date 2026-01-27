@@ -1,0 +1,87 @@
+---
+config:
+  layout: dagre
+  look: hand
+  theme: default
+title: End-to-End Architecture of the Smart Security Camera System
+---
+flowchart LR
+ subgraph Input_Stage["Input Stage"]
+    direction TB
+        VideoSource["Video Input<br>(Webcam/File)"]
+        FrameReader["Frame Reader<br>(video_io.py)"]
+        Config[("Configuration<br>(config.py)")]
+  end
+ subgraph Processing_Pipeline["Processing Pipeline"]
+        direction TB
+        MotionDet["Motion Detector<br>(motion.py)"]
+        YoloDet["YOLO Detector<br>(yolo_person_detector.py)"]
+        DnnDet["DNN Detector<br>(dnn_person_detector.py)"]
+        HogDet["HOG Detector<br>(pipeline.py / cv2)"]
+        Tracker["Probabilistic Tracker<br>(probabilistic_presence.py)"]
+  end
+ subgraph Logic_Modules["Logic Modules"]
+        Stability["Stability Gating"]
+        ROIFilter["ROI Filter"]
+        Smoother["Smoothing Logic"]
+  end
+ subgraph Ext_Models["External Models"]
+        YOLO_M["YOLOv8n"]
+        DNN_M["MobileNet SSD<br>(Caffe)"]
+        HOG_M["HOG Support Vectors"]
+  end
+ subgraph Output_Stage["Output Handling"]
+        Annotator["Frame Annotator"]
+        Recorder["Incident Recorder<br>(recorder.py)"]
+        MetaGen["Metadata Generator"]
+  end
+ subgraph Artifacts["Artifacts & Outputs"]
+        direction TB
+        OutVideo["Incident Video<br>(.mp4)"]
+        Summary["Run Summary<br>(run_summary.json)"]
+        Meta["Run Metadata<br>(run_meta.json)"]
+        LiveView["Live GUI View"]
+  end
+
+    VideoSource --> FrameReader
+    FrameReader -- Stream --> MotionDet
+    FrameReader -- Periodic --> YoloDet
+    FrameReader -- Motion Triggered --> DnnDet
+    FrameReader -- Motion Triggered --> HogDet
+    Config -. Parameters .-> MotionDet & YoloDet & DnnDet & HogDet & Stability
+    Config -. ROI .-> ROIFilter & HogDet
+    
+    MotionDet -- Motion Mask --> Stability
+    Stability -- Trigger --> DnnDet
+    Stability -- Trigger --> HogDet
+    Stability -- Trigger --> Recorder
+    
+    YoloDet --> ROIFilter
+    DnnDet --> ROIFilter
+    HogDet -- "Implied ROI" --> Smoother
+    
+    ROIFilter --> Smoother
+    Smoother --> Tracker
+    Tracker -- Presence Prob --> Annotator
+    
+    YoloDet -. Uses .-> YOLO_M
+    DnnDet -. Uses .-> DNN_M
+    HogDet -. Uses .-> HOG_M
+    
+    FrameReader --> Annotator
+    Annotator --> Recorder
+    Annotator --> LiveView
+    
+    Recorder --> OutVideo
+    Recorder --> MetaGen
+    MetaGen --> Summary & Meta
+
+    classDef default fill:#fff,stroke:#333,stroke-width:2px,font-weight:bold
+    style Input_Stage fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    style Processing_Pipeline fill:#fff9c4,stroke:#fbc02d,stroke-width:2px
+    style Logic_Modules fill:#e0f2f1,stroke:#00695c,stroke-width:2px
+    style Artifacts fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style Output_Stage fill:#ffffff,stroke:#7b1fa2,stroke-dasharray:5 5,stroke-width:2px
+    style Ext_Models fill:#ede7f6,stroke:#512da8,stroke-width:2px
+    
+    linkStyle default stroke-width:2px,fill:none,stroke:black
